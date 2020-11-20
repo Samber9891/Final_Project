@@ -5,23 +5,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity 
-public class BlogPost {
-    
+@Entity
+public class BlogPost{
+
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id; 
+
+
     private String title; 
-    private String author;
+    private String genre; 
+    private String imageUrl; 
     private String blogEntry;
 
     public BlogPost() {
     }
 
-    public BlogPost(String title, String author, String blogEntry) {
+    public BlogPost(String title, String genre, String imageUrl, String blogEntry) {
         this.title = title;
-        this.author = author;
+        this.genre = genre;
+        this.imageUrl = imageUrl;
         this.blogEntry = blogEntry;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -32,12 +40,20 @@ public class BlogPost {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getBlogEntry() {
@@ -50,9 +66,14 @@ public class BlogPost {
 
     @Override
     public String toString() {
-        return "BlogPost [author=" + author + ", blogEntry=" + blogEntry + ", id=" + id + ", title=" + title + "]";
+        return "BlogPost [blogEntry=" + blogEntry + ", genre=" + genre + ", id=" + id + ", imageUrl=" + imageUrl
+                + ", title=" + title + "]";
     }
 
 
     
+    
+
+
 }
+       
