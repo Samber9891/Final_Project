@@ -1,0 +1,38 @@
+
+
+.jumbotron {
+	margin: 30px 0px 70px 0px;
+	background-color: #40e0d0;
+	text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 30px #40e0d0, 0 0 40px #40e0d0, 0 0 10px #40e0d0, 0 0 20px #40e0d0, 0 0 700px #40e0d0;
+	color: #fff;
+	text-align: center;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.navbar {
+	margin: auto;
+  width: 100%;
+  border: 1px solid;
+  border-color: rgba(21,244,238, 0.3);
+  border-width: 3px;
+  font-family: 'Comic Neue', cursive;
+}
+
+
+
+.card-body {
+	
+	margin: 70px;
+	line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card {
+	border: none;
+	
+}
+
+footer {
+	background-color: #e60073;
+}
