@@ -1,5 +1,6 @@
 package com.tts.finalproject.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +13,12 @@ public class BlogPost{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
 
-
     private String title; 
+
     private String genre; 
-    private String imageUrl; 
+   
+    private String imageUrl;
+   
     private String blogEntry;
 
     public BlogPost() {
