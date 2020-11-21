@@ -12,7 +12,7 @@
     <div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 
-<body style="background-color: rgba(208,208,208,0.4);" >
+<body style="background-color: rgba(208,208,208,0.3);" >
 
   <div th:replace="fragments/navbar :: navbar" ></div>
 
@@ -40,9 +40,10 @@
       <h5 class="card-title" th:text="${blog.title}"></h5>
         <p class="card-text"><small th:text="${blog.genre}"></small></p>
         <p class="card-text" th:text="${blog.blogEntry}"></p>
-          <a herf ="#" th:href="@{'/blogpost/edit/{id}'(id=${blog.id})}" class="card-line btn btn-info">Edit Post</a>
-          <!-- <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a> -->
           <a herf ="#" th:href="@{'/fullblog/{id}'(id=${blog.id})}" class="card-line btn btn-success">Read More</a>
+          <a herf ="#" th:href="@{'/blogpost/edit/{id}'(id=${blog.id})}" class="card-line btn btn-info">Edit Post</a>
+          <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a>
+          
             </div>
           </div>
         </div>
@@ -64,7 +65,14 @@
                 <li><i class="fab fa-facebook-square"></i></li>
                 <li><i class="fab fa-instagram-square"></i></li>
             </ul>
-        
+    </div>
+
+    <div class="p-3 mb-3 bg-light rounded">
+      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">Find By Genre</a>
+   <div class="dropdown-menu" aria-labelledby="dropdown01" >
+       <a class="dropdown-item" href="/blogpost">All</a>
+       <a class="dropdown-item" th:each="genre : ${genres}" th:text="${genre}" th:href="@{/filter(genre=${genre})}"></a>
     </div>
 </aside>
 </div>
@@ -78,9 +86,8 @@
   <a th:href="@{/blogpost/new}">admin</a>
   
 
-<script th:inline="javascript" src="javascript/custom.js"></script>
 <div th:fragment="body-links"></div>
-
+  </footer>
 
 </body>
 </html>
