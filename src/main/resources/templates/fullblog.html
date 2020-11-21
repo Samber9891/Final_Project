@@ -3,65 +3,27 @@
   <head>
     <title>Blog Site</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <div th:replace="/fragments/styling :: head-style" ></div>
   </head>
   <body>
-    <div class="navbar navbar-expand-md navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="@{/}">
-          <img src="images/moviereel.png" width="120" height="80" /></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-                  aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
-                         aria-haspopup="true" aria-expanded="false">Find By Genre</a>
-                      <div class="dropdown-menu" aria-labelledby="dropdown01" >
-                          <a class="dropdown-item" href="/">All</a>
-                          <!--/*@thymesVar id="categories" type="java.util.List<com.example.demo.model.Category>"*/-->
-                          <a class="dropdown-item" th:each="category : ${categories}" th:text="${category}" th:href="@{/filter(category=${category})}"></a>
-                      </div>
-                  </li>
-                </ul>
-          </div>
-      </nav>
-  </div>
-
+    <div th:replace="fragments/navbar :: navbar"></div>
  
-    <!-- <h4>Blog Post:</h4>
-<div class="container">
-  <div class="card">
- <h1 th:text="*{title}" /></h1>
-</div>
-</div> -->
 
-<div class="Containter">
+<div class="Container">
     <h1>Can you see me?</h1>
-    <div class="card mb-3 large-product-card">
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <img th:src="@{${imageUrl}}"/>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h4 th:text="${title}" style="margin-bottom: 0;"></h4>
-                            </div>
-                                <h5 class="card-text" th:text="${blogEntry}"></h5>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a>
+  </div>
 </div>
     
     <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
 
 </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>  
+<div th:fragment="body-links"></div>
   </body>
 </html>
