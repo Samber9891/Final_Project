@@ -4,7 +4,7 @@
     <title>Edit Blog Post</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="style/style.css" rel="stylesheet"> 
+    <!-- <link href="style/style.css" rel="stylesheet">  -->
     <div th:replace="/fragments/styling :: head-style" ></div>
     </head>
 <body>
@@ -16,7 +16,7 @@
    
    
 
-    <div class="container">
+    <div class="container mt-5">
         <p>Please use the form below to edit Blog Post</p>
     <form action="#" th:action="@{~/blogpost/update/{id}(id=${blogPost.id})}" th:object="${blogPost}" method="POST">
         <div class="form-group">
