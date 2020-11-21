@@ -35,24 +35,17 @@ public class BlogController {
         return "index";
         }
     
-
-
-    // @GetMapping(value = "/blogpost/admin")
-    // public String adminSignIn(BlogPost blogPost) {
-    //     return "admin";
-    // }
-    // goes to create new blog view
     @GetMapping(value = "/blogpost/new")
     public String newBlog(BlogPost blogPost) {
         return "new";
     }
 
-    // @GetMapping(value = "/fullblog/{id}")
-    // public String showBlog(@PathVariable Long id, BlogPost blogpost, Model model) {
-    //     blogPostRepository.findById(id);
-    //     model.addAttribute(blogPost);
-    //     return "fullblog";
-    // }
+    @GetMapping(value = "/fullblog/{id}")
+    public String showBlog(@PathVariable Long id, Model model) {
+        Optional<BlogPost> blogPost =  blogPostRepository.findById(id);
+        model.addAttribute(blogPost); 
+        return "fullblog";
+    }
       // end of create new blog
 
 
