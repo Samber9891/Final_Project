@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Rad Flicks Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/style.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/9a07c1e541.js" crossorigin="anonymous"></script>
+    
     <div th:replace="/fragments/styling :: head-style" ></div>
-    <title>Bad Flicks Home</title>
 </head>
-<body>
 
+<body style="background-color: rgba(208,208,208,0.4);" >
 
   <div th:replace="fragments/navbar :: navbar" ></div>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Welcome to Bad Flicks!</h1>
-      <p class="lead">Check out our blogs to discover the best underrated 80's movies!</p>
+  <div class="container-fluid p-5" >
+  <div class="jumbotron jumbotron-fluid" style="background-color:rgba(0,0,0,0.9)">
+    
+      <h1 class="display-4">Welcome to Rad Flicks!</h1>
+      <h4>Check out our blogs to discover the best underrated 80's movies!</h4>     
+      <!-- <p class="lead">Check out our blogs to discover the best underrated 80's movies!</p> -->
     </div>
-  </div>
 
+    
 
-  <div class="container">
   
-    <!-- <div class="card-deck"> -->
-      <div th:each="blog:${posts}">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-    <div class="card mb-5 border-0" style="max-width:70rem;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img th:src="@{${blog.imageUrl}}" class="img-thumbnail" alt="movie poster">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title" th:text="${blog.title}"></h5>
-            <p class="card-text"><small th:text="${blog.genre}"></small></p>
-            <p class="card-text" th:text="${blog.blogEntry}"></p>
-            <a herf ="#" th:href="@{'/blogpost/edit/{id}'(id=${blog.id})}" class="card-line btn btn-info">Edit Post</a>
-            <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a>
-      </a>
-    </div>
+<div class="row no-gutters">
+  <div class="col-md-8 blog-main">
+    <div th:each="blog:${posts}">
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="row">
+          <div class="col-md-4">
+            <img th:src="@{${blog.imageUrl}}" class="img-thumbnail" alt="movie poster">
+          </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title" th:text="${blog.title}"></h5>
+        <p class="card-text"><small th:text="${blog.genre}"></small></p>
+        <p class="card-text" th:text="${blog.blogEntry}"></p>
+          <a herf ="#" th:href="@{'/blogpost/edit/{id}'(id=${blog.id})}" class="card-line btn btn-info">Edit Post</a>
+          <!-- <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a> -->
+          <a herf ="#" th:href="@{'/fullblog/{id}'(id=${blog.id})}" class="card-line btn btn-success">Read More</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <aside class="col-md-3 blog-sidebar">
+    <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <img src="https://media1.s-nbcnews.com/j/newscms/2019_04/2729521/190125-she-thrives-valencia-clay-1x1-kh_47ad99786385f86a078469b68a8b3d71.focal-460x460.jpg" alt="Me" class="rounded-circle" height= "100px" width="100px" >
+            <p class="mb-0">
+                "Nothing beats the cheese of a radical 80's movie"
+            </p>
+    </div>
+    <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">Follow Us!</h4>
+            <ul class="list-unstyled">
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-instagram-square"></i></li>
+            </ul>
+        
+    </div>
+</aside>
 </div>
-</div>   
-    
+</div>      
 
 
 <footer>
   <hr />
   <div class="container">
-    <p>&copy; BadFlicks</p>
+    <p>&copy; RadFlicks</p>
   <a th:href="@{/blogpost/new}">admin</a>
-  <div class="about-card">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8JTwkpu0Z6qZlshKkqh5FOo1NIMSIPp9wVg&usqp=CAU" alt="Author" class="rounded-0">
-</div>
-  </footer>
-</div>
+  
+
+<script th:inline="javascript" src="javascript/custom.js"></script>
 <div th:fragment="body-links"></div>
 
 
