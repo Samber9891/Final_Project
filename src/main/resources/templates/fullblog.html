@@ -16,12 +16,12 @@
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a>
+    <p class="card-text"><small th:text="${blog.genre}"></small></p>
+    <!-- <a herf ="#" th:href="@{'/blogpost/delete/{id}'(id=${blog.id})}" class="card-line btn btn-danger">Delete Post</a> -->
   </div>
 </div>
     
-    <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+    <a th:href="@{/blogpost}"><button class="btn btn-success">Back To Home Page</button></a>
 
 </div>
 <div th:fragment="body-links"></div>
