@@ -79,6 +79,7 @@ public class BlogController {
         model.addAttribute("genre", blogPost.getGenre());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
         model.addAttribute("imageUrl", blogPost.getImageUrl());
+        model.addAttribute("youtubeUrl", blogPost.getYoutubeUrl());
         return "result";
     }
 
@@ -113,6 +114,7 @@ public class BlogController {
             actualPost.setGenre(blogPost.getGenre());
             actualPost.setBlogEntry(blogPost.getBlogEntry());
             actualPost.setImageUrl(blogPost.getImageUrl());
+            actualPost.setYoutubeUrl(blogPost.getYoutubeUrl());
             blogPostRepository.save(actualPost);
             model.addAttribute("blogPost", actualPost);
         }
