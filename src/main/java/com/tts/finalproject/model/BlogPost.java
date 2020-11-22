@@ -21,20 +21,24 @@ public class BlogPost{
    
     private String blogEntry;
 
+    private String youtubeUrl; 
+
     public BlogPost() {
     }
 
-    public BlogPost(String title, String genre, String imageUrl, String blogEntry) {
+    public BlogPost(String title, String genre, String imageUrl, String blogEntry, String youtubeUrl) {
         this.title = title;
         this.genre = genre;
         this.imageUrl = imageUrl;
         this.blogEntry = blogEntry;
+        this.youtubeUrl = youtubeUrl;
     }
 
     public Long getId() {
         return id;
     }
 
+    
     public String getTitle() {
         return title;
     }
@@ -67,12 +71,21 @@ public class BlogPost{
         this.blogEntry = blogEntry;
     }
 
+    public String getYoutubeUrl() {
+        return youtubeUrl;
+    }
+
+    public void setYoutubeUrl(String youtubeUrl) {
+        this.youtubeUrl = youtubeUrl;
+    }
+
     @Override
     public String toString() {
         return "BlogPost [blogEntry=" + blogEntry + ", genre=" + genre + ", id=" + id + ", imageUrl=" + imageUrl
-                + ", title=" + title + "]";
+                + ", title=" + title + ", youtubeUrl=" + youtubeUrl + "]";
     }
 
+    
 
     
     
