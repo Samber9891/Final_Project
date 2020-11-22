@@ -25,13 +25,22 @@ h1 {
   border: 2px solid;
   border-color: rgba(21,244,238, 0.3);
   font-family: 'Comic Neue', cursive;
-  background-color: rgba(248, 144, 231, 0.9);
+  background-color: grey; 
 }
 
 
 aside{
   text-align: center;
   margin-left: 40px;
+}
+
+.element {
+ 
+    background-color: lighten(#0074d9, 20);
+    /* padding: 20px; */
+    color: rgba(255,255,255,.9);
+    position: fixed;
+    top:350px;
 }
 .card-body {
 	
